@@ -14,6 +14,11 @@ public class Sprite {
 		this.setPos(Window.CENTER);
 	}
 	
+	public void render()
+	{
+		Renderer.drawSprite(this);
+	}
+	
 	public Sprite setImage(String loc)
 	{	
 		this.image = new ImageIcon(loc).getImage();

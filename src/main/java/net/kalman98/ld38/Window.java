@@ -15,7 +15,7 @@ public class Window extends JPanel
 	final static int HEIGHT = 432;
 	final static Pos CENTER = new Pos(WIDTH/2, HEIGHT/2);
 	
-	public ArrayList<Sprite> sprites;
+	public ArrayList<Sprite> sprites = new ArrayList<Sprite>();
 	
 	/**
 	 * 
@@ -35,13 +35,18 @@ public class Window extends JPanel
     public void paint(Graphics g)
 	{
         super.paint(g);
+
+		System.out.println("Paintey time.");
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         
+        // this is the big moment - where Renderer gets its Graphics2D object, and all consecutive rendering occurs
+        Renderer.setG2D(g2d);
+        
         for (int i = 0; i < this.sprites.size(); i++)
         {
-        	Sprite s = this.sprites.get(i);
-        	g2d.drawImage(s.getImage(), s.getX(), s.getY(), null);
+        	System.out.println("Printing that thing.");
+        	this.sprites.get(i).render();
         }
     }
 	
