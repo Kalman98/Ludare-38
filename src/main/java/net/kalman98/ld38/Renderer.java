@@ -9,7 +9,6 @@ public class Renderer {
 	
 	public static void drawSprite(Sprite s)
 	{
-		System.out.println("Rendering that one image.");
     	g2d.drawImage(s.getImage(), s.getX(), s.getY(), null);
 	}
 	

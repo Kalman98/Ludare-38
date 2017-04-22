@@ -8,22 +8,23 @@ public class Game implements ActionListener
 {
 
 	Window window = new Window();
-	Timer timer;
-	
+	Timer maintimer;
+	Timer gfxtimer;
 	public Game()
 	{	
-		window.add(new Sprite().setPos(new Pos(500, 50)).setImage("src/main/resources/aoeutelomatic.png"));
+		window.add(new Sprite().setPos(new Pos(500, 50)).setImage("telomatic.png"));
 		
-		timer = new Timer(10, this);
-		timer.start();
+		maintimer = new Timer(10, this);
+		maintimer.start();
+	
+		gfxtimer = new Timer(5, window);
+		gfxtimer.start();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
-		window.revalidate();
-		window.repaint();
-		System.out.println("Finished painteying.");
+		window.add(new Sprite().setPos(new Pos(500, 50)).setImage("telomatic.png"));
 	}
 	
 }

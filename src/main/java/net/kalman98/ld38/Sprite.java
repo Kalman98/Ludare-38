@@ -21,6 +21,7 @@ public class Sprite {
 	
 	public Sprite setImage(String loc)
 	{	
+		loc = "src/main/resources/" + loc;
 		this.image = new ImageIcon(loc).getImage();
 		return this;
 	}
